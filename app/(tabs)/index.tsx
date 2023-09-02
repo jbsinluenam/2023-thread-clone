@@ -1,15 +1,19 @@
 import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native-gesture-handler';
+import Lottie from 'lottie-react-native';
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <Lottie
+          source={require('../../assets/lottie/threads.json')}
+          loop={true}
+          style={{ width: 90, height: 90 }}
+        />
+        </ScrollView>
+    </SafeAreaView>
   );
 }
 
